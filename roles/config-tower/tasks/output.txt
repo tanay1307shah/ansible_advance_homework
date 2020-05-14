@@ -1,0 +1,1531 @@
+ansible-playbook 2.9.8
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible-playbook
+  python version = 2.7.5 (default, Jun 11 2019, 14:33:56) [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+Using /etc/ansible/ansible.cfg as config file
+host_list declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+script declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+auto declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+Parsed /etc/ansible/hosts inventory source with ini plugin
+
+PLAYBOOK: site-config-tower.yml **************************************************************************************************************************************************************************************************************
+1 plays in /root/ansible_advance_homework/site-config-tower.yml
+
+PLAY [localhost] *****************************************************************************************************************************************************************************************************************************
+META: ran handlers
+
+TASK [config-tower : include_tasks] **********************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/main.yml:3
+included: /root/ansible_advance_homework/roles/config-tower/tasks/pre-config-tower.yml for localhost
+
+TASK [config-tower : Generate var file for order_svc.sh script] ******************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/pre-config-tower.yml:1
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800 && echo ansible-tmp-1589418363.61-9244-73173780878800="` echo /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpW65Lt2 TO /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/AnsiballZ_stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/ /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/AnsiballZ_stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/AnsiballZ_stat.py && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpR14anP TO /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/AnsiballZ_file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/ /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/AnsiballZ_file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/AnsiballZ_file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418363.61-9244-73173780878800/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false, 
+    "checksum": "a9a5a8cdb1eff1490fe3456f50e256e15c1be7e7", 
+    "dest": "/tmp/aws_jq_vars.yml", 
+    "diff": {
+        "after": {
+            "path": "/tmp/aws_jq_vars.yml"
+        }, 
+        "before": {
+            "path": "/tmp/aws_jq_vars.yml"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null, 
+            "_original_basename": "aws_jq_vars.yml", 
+            "access_time": null, 
+            "access_time_format": "%Y%m%d%H%M.%S", 
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/tmp/aws_jq_vars.yml", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "modification_time": null, 
+            "modification_time_format": "%Y%m%d%H%M.%S", 
+            "owner": null, 
+            "path": "/tmp/aws_jq_vars.yml", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "file", 
+            "unsafe_writes": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/tmp/aws_jq_vars.yml", 
+    "secontext": "unconfined_u:object_r:admin_home_t:s0", 
+    "size": 124, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [config-tower : Generate var file for tower module] *************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/pre-config-tower.yml:6
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234 && echo ansible-tmp-1589418364.3-9272-261134639097234="` echo /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp4gEMSf TO /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/AnsiballZ_stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/ /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/AnsiballZ_stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/AnsiballZ_stat.py && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpBmEjge TO /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/AnsiballZ_file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/ /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/AnsiballZ_file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/AnsiballZ_file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418364.3-9272-261134639097234/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false, 
+    "checksum": "4872d801a3c6c1469508f19c563b7a6f1462cb1f", 
+    "dest": "/tmp/tower_info.yml", 
+    "diff": {
+        "after": {
+            "path": "/tmp/tower_info.yml"
+        }, 
+        "before": {
+            "path": "/tmp/tower_info.yml"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null, 
+            "_original_basename": "tower_info.yml", 
+            "access_time": null, 
+            "access_time_format": "%Y%m%d%H%M.%S", 
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/tmp/tower_info.yml", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "modification_time": null, 
+            "modification_time_format": "%Y%m%d%H%M.%S", 
+            "owner": null, 
+            "path": "/tmp/tower_info.yml", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "file", 
+            "unsafe_writes": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/tmp/tower_info.yml", 
+    "secontext": "unconfined_u:object_r:admin_home_t:s0", 
+    "size": 18, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [config-tower : Copy opentlc ssh keys] **************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/pre-config-tower.yml:11
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620 && echo ansible-tmp-1589418364.68-9300-228534434936620="` echo /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpyQVUZw TO /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/AnsiballZ_stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/ /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/AnsiballZ_stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/AnsiballZ_stat.py && sleep 0'
+<127.0.0.1> PUT /root/.ssh/mykey.pem TO /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/source
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/ /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/source && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/copy.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp1JEA64 TO /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/AnsiballZ_copy.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/ /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/AnsiballZ_copy.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/AnsiballZ_copy.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "checksum": "1bd9a20414605226051aaa4b48caae73f234243a", 
+    "dest": "/root/secret.pem", 
+    "diff": [], 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "_original_basename": "mykey.pem", 
+            "attributes": null, 
+            "backup": false, 
+            "checksum": "1bd9a20414605226051aaa4b48caae73f234243a", 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/root/secret.pem", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": true, 
+            "group": null, 
+            "local_follow": null, 
+            "mode": null, 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/source", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "md5sum": "5236d7cf840bacbb3fae0125fb0dc0fb", 
+    "mode": "0644", 
+    "owner": "root", 
+    "secontext": "system_u:object_r:admin_home_t:s0", 
+    "size": 2623, 
+    "src": "/root/.ansible/tmp/ansible-tmp-1589418364.68-9300-228534434936620/source", 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [config-tower : Copy inventory vars] ****************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/pre-config-tower.yml:17
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562 && echo ansible-tmp-1589418365.17-9329-80361662764562="` echo /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpR8Nzmr TO /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/AnsiballZ_stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/ /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/AnsiballZ_stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/AnsiballZ_stat.py && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmplktsDT TO /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/AnsiballZ_file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/ /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/AnsiballZ_file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/AnsiballZ_file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418365.17-9329-80361662764562/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false, 
+    "checksum": "21301e170a42d83b7806fb453aeee8d051c1ccac", 
+    "dest": "/root/inventory_vars.json", 
+    "diff": {
+        "after": {
+            "path": "/root/inventory_vars.json"
+        }, 
+        "before": {
+            "path": "/root/inventory_vars.json"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null, 
+            "_original_basename": "inventory_vars.json", 
+            "access_time": null, 
+            "access_time_format": "%Y%m%d%H%M.%S", 
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/root/inventory_vars.json", 
+            "directory_mode": null, 
+            "follow": true, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "modification_time": null, 
+            "modification_time_format": "%Y%m%d%H%M.%S", 
+            "owner": null, 
+            "path": "/root/inventory_vars.json", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "file", 
+            "unsafe_writes": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/root/inventory_vars.json", 
+    "secontext": "system_u:object_r:admin_home_t:s0", 
+    "size": 25, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [config-tower : include_tasks] **********************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/main.yml:4
+included: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml for localhost
+
+TASK [config-tower : Create Homework Assignment project] *************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml:1
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418365.64-9359-46897294403096 && echo ansible-tmp-1589418365.64-9359-46897294403096="` echo /root/.ansible/tmp/ansible-tmp-1589418365.64-9359-46897294403096 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/web_infrastructure/ansible_tower/tower_project.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpaQlgWf TO /root/.ansible/tmp/ansible-tmp-1589418365.64-9359-46897294403096/AnsiballZ_tower_project.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418365.64-9359-46897294403096/ /root/.ansible/tmp/ansible-tmp-1589418365.64-9359-46897294403096/AnsiballZ_tower_project.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418365.64-9359-46897294403096/AnsiballZ_tower_project.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418365.64-9359-46897294403096/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false, 
+    "id": 6, 
+    "invocation": {
+        "module_args": {
+            "custom_virtualenv": null, 
+            "description": "Advanced Ansible Homework Assignment", 
+            "job_timeout": 0, 
+            "local_path": null, 
+            "name": "Homework Assignment", 
+            "organization": "Default", 
+            "scm_branch": "master", 
+            "scm_clean": false, 
+            "scm_credential": null, 
+            "scm_delete_on_update": false, 
+            "scm_type": "git", 
+            "scm_update_cache_timeout": 0, 
+            "scm_update_on_launch": true, 
+            "scm_url": "https://github.com/tanay1307shah/bad-ansible.git", 
+            "state": "present"
+        }
+    }, 
+    "project": "Homework Assignment", 
+    "state": "present"
+}
+
+TASK [config-tower : Machine Credentail to connect to workstation using openstack.pub] *******************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml:14
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418366.44-9379-4354244103094 && echo ansible-tmp-1589418366.44-9379-4354244103094="` echo /root/.ansible/tmp/ansible-tmp-1589418366.44-9379-4354244103094 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/web_infrastructure/ansible_tower/tower_credential.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpUuUDT0 TO /root/.ansible/tmp/ansible-tmp-1589418366.44-9379-4354244103094/AnsiballZ_tower_credential.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418366.44-9379-4354244103094/ /root/.ansible/tmp/ansible-tmp-1589418366.44-9379-4354244103094/AnsiballZ_tower_credential.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418366.44-9379-4354244103094/AnsiballZ_tower_credential.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418366.44-9379-4354244103094/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "credential": "Connect_to_workstation", 
+    "id": 3, 
+    "invocation": {
+        "module_args": {
+            "authorize": false, 
+            "authorize_password": null, 
+            "become_method": null, 
+            "become_password": null, 
+            "become_username": null, 
+            "client": null, 
+            "description": null, 
+            "domain": null, 
+            "host": null, 
+            "name": "Connect_to_workstation", 
+            "organization": "Default", 
+            "password": null, 
+            "project": null, 
+            "secret": null, 
+            "security_token": null, 
+            "ssh_key_data": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+            "ssh_key_unlock": null, 
+            "state": "present", 
+            "subscription": null, 
+            "team": null, 
+            "tenant": null, 
+            "user": null, 
+            "username": "cloud-user", 
+            "vault_id": null, 
+            "vault_password": null
+        }
+    }, 
+    "state": "present"
+}
+
+TASK [config-tower : Create Inventory] *******************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml:26
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418367.56-9399-146866965538183 && echo ansible-tmp-1589418367.56-9399-146866965538183="` echo /root/.ansible/tmp/ansible-tmp-1589418367.56-9399-146866965538183 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmplLaiQQ TO /root/.ansible/tmp/ansible-tmp-1589418367.56-9399-146866965538183/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418367.56-9399-146866965538183/ /root/.ansible/tmp/ansible-tmp-1589418367.56-9399-146866965538183/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418367.56-9399-146866965538183/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418367.56-9399-146866965538183/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "inventory", 
+        "create", 
+        "-n", 
+        "scm_inventory", 
+        "--organization", 
+        "Default"
+    ], 
+    "delta": "0:00:00.525391", 
+    "end": "2020-05-14 01:06:08.337884", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli inventory create -n \"scm_inventory\" --organization \"Default\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:07.812493", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ============= ============ \nid     name      organization \n== ============= ============ \n 2 scm_inventory            1\n== ============= ============ ", 
+    "stdout_lines": [
+        "== ============= ============ ", 
+        "id     name      organization ", 
+        "== ============= ============ ", 
+        " 2 scm_inventory            1", 
+        "== ============= ============ "
+    ]
+}
+
+TASK [config-tower : Create Group in static inventory] ***************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml:30
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418368.41-9422-190769232767033 && echo ansible-tmp-1589418368.41-9422-190769232767033="` echo /root/.ansible/tmp/ansible-tmp-1589418368.41-9422-190769232767033 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp50dBJa TO /root/.ansible/tmp/ansible-tmp-1589418368.41-9422-190769232767033/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418368.41-9422-190769232767033/ /root/.ansible/tmp/ansible-tmp-1589418368.41-9422-190769232767033/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418368.41-9422-190769232767033/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418368.41-9422-190769232767033/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "--inventory", 
+        "scm_inventory", 
+        "--name", 
+        "workstation"
+    ], 
+    "delta": "0:00:00.514629", 
+    "end": "2020-05-14 01:06:09.029257", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create --inventory \"scm_inventory\"  --name workstation\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:08.514628", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== =========== ========= \nid    name     inventory \n== =========== ========= \n 1 workstation         2\n== =========== ========= ", 
+    "stdout_lines": [
+        "== =========== ========= ", 
+        "id    name     inventory ", 
+        "== =========== ========= ", 
+        " 1 workstation         2", 
+        "== =========== ========= "
+    ]
+}
+
+TASK [config-tower : Add workstation host in tower_inventory] ********************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml:34
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418369.1-9445-49512926645945 && echo ansible-tmp-1589418369.1-9445-49512926645945="` echo /root/.ansible/tmp/ansible-tmp-1589418369.1-9445-49512926645945 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpBk_1n9 TO /root/.ansible/tmp/ansible-tmp-1589418369.1-9445-49512926645945/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418369.1-9445-49512926645945/ /root/.ansible/tmp/ansible-tmp-1589418369.1-9445-49512926645945/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418369.1-9445-49512926645945/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418369.1-9445-49512926645945/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "host", 
+        "create", 
+        "--inventory", 
+        "scm_inventory", 
+        "--name", 
+        "workstation-f8a0.rhpds.opentlc.com"
+    ], 
+    "delta": "0:00:00.602458", 
+    "end": "2020-05-14 01:06:09.808091", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli host create --inventory \"scm_inventory\" --name \"workstation-f8a0.rhpds.opentlc.com\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:09.205633", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ================================== ========= ======= \nid                name                inventory enabled \n== ================================== ========= ======= \n 2 workstation-f8a0.rhpds.opentlc.com         2    true\n== ================================== ========= ======= ", 
+    "stdout_lines": [
+        "== ================================== ========= ======= ", 
+        "id                name                inventory enabled ", 
+        "== ================================== ========= ======= ", 
+        " 2 workstation-f8a0.rhpds.opentlc.com         2    true", 
+        "== ================================== ========= ======= "
+    ]
+}
+
+TASK [config-tower : Associate workstation host to group] ************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml:38
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418369.88-9468-260445650007802 && echo ansible-tmp-1589418369.88-9468-260445650007802="` echo /root/.ansible/tmp/ansible-tmp-1589418369.88-9468-260445650007802 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpl0CRTC TO /root/.ansible/tmp/ansible-tmp-1589418369.88-9468-260445650007802/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418369.88-9468-260445650007802/ /root/.ansible/tmp/ansible-tmp-1589418369.88-9468-260445650007802/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418369.88-9468-260445650007802/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418369.88-9468-260445650007802/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "host", 
+        "associate", 
+        "--host", 
+        "workstation-f8a0.rhpds.opentlc.com", 
+        "--group", 
+        "workstation"
+    ], 
+    "delta": "0:00:00.778801", 
+    "end": "2020-05-14 01:06:10.763906", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli host associate --host \"workstation-f8a0.rhpds.opentlc.com\" --group \"workstation\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:09.985105", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "OK. (changed: false)", 
+    "stdout_lines": [
+        "OK. (changed: false)"
+    ]
+}
+
+TASK [config-tower : Tower Creds key file] ***************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml:43
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418370.84-9491-162047348008592 && echo ansible-tmp-1589418370.84-9491-162047348008592="` echo /root/.ansible/tmp/ansible-tmp-1589418370.84-9491-162047348008592 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/web_infrastructure/ansible_tower/tower_credential.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpR0L7gn TO /root/.ansible/tmp/ansible-tmp-1589418370.84-9491-162047348008592/AnsiballZ_tower_credential.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418370.84-9491-162047348008592/ /root/.ansible/tmp/ansible-tmp-1589418370.84-9491-162047348008592/AnsiballZ_tower_credential.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418370.84-9491-162047348008592/AnsiballZ_tower_credential.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418370.84-9491-162047348008592/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "credential": "Opentlc key", 
+    "id": 4, 
+    "invocation": {
+        "module_args": {
+            "authorize": false, 
+            "authorize_password": null, 
+            "become_method": null, 
+            "become_password": null, 
+            "become_username": null, 
+            "client": null, 
+            "description": null, 
+            "domain": null, 
+            "host": null, 
+            "name": "Opentlc key", 
+            "organization": "Default", 
+            "password": null, 
+            "project": null, 
+            "secret": null, 
+            "security_token": null, 
+            "ssh_key_data": "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn\nNhAAAAAwEAAQAAAYEA0xs9Ubz5RqKdkSGK2QXknvBR9j8HSiCGdCmT1fD73IUf2ykNtQfj\nYbv93xUVuS+C1NoC5d81mSjQd+NNYVe0/mOxpvjyVcXMFnFGs11jsXMGzqEad2mIiL9qmK\nxwN1BOVKQTMkjFWxaAb9EUXvSETyMMJgzcDTznv9seGaUI/NYsK7oTSAT4NJXlT8ZEWwMI\n5LuxbgOVV+RvyfqAYEKJqTAUPLjgRHiZs/ivw6JvgnKoJ8lnw5zhmfa8GmI/td3A0m/6Xh\nVNnDFhrRd8swHLaVU/W9xYWGjApVlbaNM11bNVNPDVTdnQdmdLqZ5j3W4a8T4V/mS2oD2j\nxO+OQ0AYN5OI/LOo1rqHZL3+T/k1Lf1kkrR0aaQZ9xuCgPOGAMh10eTxr7Mi6tUsUWaR1/\nrz96MZXyuhztLYcgUwHwM3Pk5T6ixHloXt/nHDE6xhvrIRNfVNfHQmcHA2zHTr+nB2BgAE\nqHsaXy0+8tw+eMd+mxQ6aHEEn8hjB6w3eovCjkaDAAAFmGH+909h/vdPAAAAB3NzaC1yc2\nEAAAGBANMbPVG8+UainZEhitkF5J7wUfY/B0oghnQpk9Xw+9yFH9spDbUH42G7/d8VFbkv\ngtTaAuXfNZko0HfjTWFXtP5jsab48lXFzBZxRrNdY7FzBs6hGndpiIi/apiscDdQTlSkEz\nJIxVsWgG/RFF70hE8jDCYM3A0857/bHhmlCPzWLCu6E0gE+DSV5U/GRFsDCOS7sW4DlVfk\nb8n6gGBCiakwFDy44ER4mbP4r8Oib4JyqCfJZ8Oc4Zn2vBpiP7XdwNJv+l4VTZwxYa0XfL\nMBy2lVP1vcWFhowKVZW2jTNdWzVTTw1U3Z0HZnS6meY91uGvE+Ff5ktqA9o8TvjkNAGDeT\niPyzqNa6h2S9/k/5NS39ZJK0dGmkGfcbgoDzhgDIddHk8a+zIurVLFFmkdf68/ejGV8roc\n7S2HIFMB8DNz5OU+osR5aF7f5xwxOsYb6yETX1TXx0JnBwNsx06/pwdgYABKh7Gl8tPvLc\nPnjHfpsUOmhxBJ/IYwesN3qLwo5GgwAAAAMBAAEAAAGAD7tz8md23EC6JVqukkXSJ9YZBZ\nTk4i1SV83Rapwu6Nwy545Dqz4PP/VWkg1sNQTJZztoA+GCiQt1nbmexqZWoq6jSqI6zRGU\niAehETTgfRTpaPSwmD2RIz/Anegb5MNjUwN3OsQZkRQ4Nh0Ku5jVU2B1Q1CqBYKIcs/Nin\nO2G8GKQSf4z+Eu7hxNnohUB8ROIV2rd1tlAcvQWOkGMCZFRAqFN5E/hVrHeZYK4zVzwfDx\nfyWPShCi72pn0j+IJ/GCjoSFim6LSg4VsqVzC8E/QtYgAo55XuuiAmFOA66f9Qu8HK55Ns\nMTyHMvmwBsLq87kYoA/zznSvOlpbI8qOS0IArSkAKgfaVc0YIiPH0LMIZYS8Sta1ONyvit\n70ixXSLZiXSS/JG2a8gOuDcrJ8igSEmucN66oqO5tmERLAz9K6N1+QASPuDHO2pJWPEX5l\nhf7aijRQVwkZN4g2W0ywny+KY4FYb3Z0rUbNDRrGQ26knrC2KRWARu8zeNXisVNE5BAAAA\nwBFT599Cv+PiZ0ycvHJwQh4puPDKGz31MKTIYVdpzhsG9kT/2kcUr0JxdCQijx1ezNeSKP\nopvtELFK8N4quBayY9mx7Uvj9zxXIw43b9XeOgIaoZOVhxttnq8JQmBEy2OnTgAikkzdsg\ntep/5Pkh2Lqdt17vGiTjWZpHp0Pexn0Iwrxj86dxUw4oi3gSHcB7ErQoEBoYxpMpz1KHR2\nnp6POnwTAlDTG69cf38FbipeCAh0gf1MgICYYnZkJDhcCcPgAAAMEA7KhpHJq5Kj/Kom+h\nE3WBc3KPofOAddk36qmi5LQVdwvoXsUtyprlQvbYlvsJtHl40JQJQniVvYek9DAqyprdf9\n83BXFCc0bJD5H3hQ6LStpfjslgxnusm+blzkEbvU/l0qafKrQicU3XN6AzMEy/p3vDtCFb\n3suoea4WlyH5xn2ozw35x2yYdHhYddjDv0DC9UGLuASgAbIw86YQnaIcm2JBOJ8UBbL7ZG\nigxGkdAow/Pq+2p58jhFqr6+0klAaJAAAAwQDkXDddXBade1ozYBBlPvlx7x35Tr5xShYl\npq89OLlxHt+ASEdr9TF2lfn7XShOhCKcfk6A6DjLfmcoZLCsXGwoxL9DGHDbfhj3gcrmoU\nxLeBmpStS85UalTAwIGio4WPkF15BPfr2Ddm2d+VnjPJAZHmK+RJX1JVxO/trIV9iWLu7N\npShVi32THrJcs+ns+k6Qw6SJe5oxTwA+zFS4E27gLOz2uSv4fuQthYRFkSgEQUEfZaSihm\nSkUHdW00aUYasAAAAddGFuc2hhaEBsb2NhbGhvc3QubG9jYWxkb21haW4BAgMEBQY=\n-----END OPENSSH PRIVATE KEY-----\n\n", 
+            "ssh_key_unlock": null, 
+            "state": "present", 
+            "subscription": null, 
+            "team": null, 
+            "tenant": null, 
+            "user": null, 
+            "username": "tanshah-redhat.com", 
+            "vault_id": null, 
+            "vault_password": null
+        }
+    }, 
+    "state": "present"
+}
+
+TASK [config-tower : Remove secret] **********************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/post-config-tower.yml:56
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418371.72-9511-105207026778528 && echo ansible-tmp-1589418371.72-9511-105207026778528="` echo /root/.ansible/tmp/ansible-tmp-1589418371.72-9511-105207026778528 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpIh_xKe TO /root/.ansible/tmp/ansible-tmp-1589418371.72-9511-105207026778528/AnsiballZ_file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418371.72-9511-105207026778528/ /root/.ansible/tmp/ansible-tmp-1589418371.72-9511-105207026778528/AnsiballZ_file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418371.72-9511-105207026778528/AnsiballZ_file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418371.72-9511-105207026778528/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/root/secret.pem", 
+            "state": "absent"
+        }, 
+        "before": {
+            "path": "/root/secret.pem", 
+            "state": "file"
+        }
+    }, 
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null, 
+            "_original_basename": null, 
+            "access_time": null, 
+            "access_time_format": "%Y%m%d%H%M.%S", 
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "directory_mode": null, 
+            "follow": true, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "modification_time": null, 
+            "modification_time_format": "%Y%m%d%H%M.%S", 
+            "name": "/root/secret.pem", 
+            "owner": null, 
+            "path": "/root/secret.pem", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "absent", 
+            "unsafe_writes": null
+        }
+    }, 
+    "path": "/root/secret.pem", 
+    "state": "absent"
+}
+
+TASK [config-tower : include_tasks] **********************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/main.yml:5
+included: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml for localhost
+
+TASK [config-tower : Create Dynamic Inventory] ***********************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml:1
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418371.93-9533-128264102063400 && echo ansible-tmp-1589418371.93-9533-128264102063400="` echo /root/.ansible/tmp/ansible-tmp-1589418371.93-9533-128264102063400 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp_PuTCS TO /root/.ansible/tmp/ansible-tmp-1589418371.93-9533-128264102063400/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418371.93-9533-128264102063400/ /root/.ansible/tmp/ansible-tmp-1589418371.93-9533-128264102063400/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418371.93-9533-128264102063400/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418371.93-9533-128264102063400/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "inventory", 
+        "create", 
+        "-n", 
+        "Three tier inventory", 
+        "--organization", 
+        "Default"
+    ], 
+    "delta": "0:00:00.516488", 
+    "end": "2020-05-14 01:06:12.556745", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli inventory create -n \"Three tier inventory\" --organization \"Default\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:12.040257", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ==================== ============ \nid         name         organization \n== ==================== ============ \n 3 Three tier inventory            1\n== ==================== ============ ", 
+    "stdout_lines": [
+        "== ==================== ============ ", 
+        "id         name         organization ", 
+        "== ==================== ============ ", 
+        " 3 Three tier inventory            1", 
+        "== ==================== ============ "
+    ]
+}
+
+TASK [config-tower : Create groups needed to deploy app] *************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml:6
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418372.63-9556-254815720884463 && echo ansible-tmp-1589418372.63-9556-254815720884463="` echo /root/.ansible/tmp/ansible-tmp-1589418372.63-9556-254815720884463 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpbv3I97 TO /root/.ansible/tmp/ansible-tmp-1589418372.63-9556-254815720884463/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418372.63-9556-254815720884463/ /root/.ansible/tmp/ansible-tmp-1589418372.63-9556-254815720884463/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418372.63-9556-254815720884463/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418372.63-9556-254815720884463/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => (item=apps) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "-n", 
+        "apps", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.491133", 
+    "end": "2020-05-14 01:06:13.229106", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create -n \"apps\" --inventory \"Three tier inventory\" \n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": "apps", 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:12.737973", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ==== ========= \nid name inventory \n== ==== ========= \n 2 apps         3\n== ==== ========= ", 
+    "stdout_lines": [
+        "== ==== ========= ", 
+        "id name inventory ", 
+        "== ==== ========= ", 
+        " 2 apps         3", 
+        "== ==== ========= "
+    ]
+}
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418373.26-9556-4758178566196 && echo ansible-tmp-1589418373.26-9556-4758178566196="` echo /root/.ansible/tmp/ansible-tmp-1589418373.26-9556-4758178566196 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpp29YMv TO /root/.ansible/tmp/ansible-tmp-1589418373.26-9556-4758178566196/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418373.26-9556-4758178566196/ /root/.ansible/tmp/ansible-tmp-1589418373.26-9556-4758178566196/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418373.26-9556-4758178566196/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418373.26-9556-4758178566196/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => (item=appdbs) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "-n", 
+        "appdbs", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.496227", 
+    "end": "2020-05-14 01:06:13.860438", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create -n \"appdbs\" --inventory \"Three tier inventory\" \n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": "appdbs", 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:13.364211", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ====== ========= \nid  name  inventory \n== ====== ========= \n 3 appdbs         3\n== ====== ========= ", 
+    "stdout_lines": [
+        "== ====== ========= ", 
+        "id  name  inventory ", 
+        "== ====== ========= ", 
+        " 3 appdbs         3", 
+        "== ====== ========= "
+    ]
+}
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418373.89-9556-154776340964021 && echo ansible-tmp-1589418373.89-9556-154776340964021="` echo /root/.ansible/tmp/ansible-tmp-1589418373.89-9556-154776340964021 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpr0e0Ga TO /root/.ansible/tmp/ansible-tmp-1589418373.89-9556-154776340964021/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418373.89-9556-154776340964021/ /root/.ansible/tmp/ansible-tmp-1589418373.89-9556-154776340964021/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418373.89-9556-154776340964021/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418373.89-9556-154776340964021/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => (item=frontends) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "-n", 
+        "frontends", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.482631", 
+    "end": "2020-05-14 01:06:14.478427", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create -n \"frontends\" --inventory \"Three tier inventory\" \n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": "frontends", 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:13.995796", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ========= ========= \nid   name    inventory \n== ========= ========= \n 4 frontends         3\n== ========= ========= ", 
+    "stdout_lines": [
+        "== ========= ========= ", 
+        "id   name    inventory ", 
+        "== ========= ========= ", 
+        " 4 frontends         3", 
+        "== ========= ========= "
+    ]
+}
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418374.51-9556-206576458943970 && echo ansible-tmp-1589418374.51-9556-206576458943970="` echo /root/.ansible/tmp/ansible-tmp-1589418374.51-9556-206576458943970 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpXizOtK TO /root/.ansible/tmp/ansible-tmp-1589418374.51-9556-206576458943970/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418374.51-9556-206576458943970/ /root/.ansible/tmp/ansible-tmp-1589418374.51-9556-206576458943970/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418374.51-9556-206576458943970/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418374.51-9556-206576458943970/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => (item=bastions) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "-n", 
+        "bastions", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.484405", 
+    "end": "2020-05-14 01:06:15.097885", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create -n \"bastions\" --inventory \"Three tier inventory\" \n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": "bastions", 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:14.613480", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ======== ========= \nid   name   inventory \n== ======== ========= \n 5 bastions         3\n== ======== ========= ", 
+    "stdout_lines": [
+        "== ======== ========= ", 
+        "id   name   inventory ", 
+        "== ======== ========= ", 
+        " 5 bastions         3", 
+        "== ======== ========= "
+    ]
+}
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418375.13-9556-157632957847365 && echo ansible-tmp-1589418375.13-9556-157632957847365="` echo /root/.ansible/tmp/ansible-tmp-1589418375.13-9556-157632957847365 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp2EN0MU TO /root/.ansible/tmp/ansible-tmp-1589418375.13-9556-157632957847365/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418375.13-9556-157632957847365/ /root/.ansible/tmp/ansible-tmp-1589418375.13-9556-157632957847365/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418375.13-9556-157632957847365/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418375.13-9556-157632957847365/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => (item=tag_AnsibleGroup_bastions) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "-n", 
+        "tag_AnsibleGroup_bastions", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.481790", 
+    "end": "2020-05-14 01:06:15.711379", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create -n \"tag_AnsibleGroup_bastions\" --inventory \"Three tier inventory\" \n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": "tag_AnsibleGroup_bastions", 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:15.229589", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ========================= ========= \nid           name            inventory \n== ========================= ========= \n 6 tag_AnsibleGroup_bastions         3\n== ========================= ========= ", 
+    "stdout_lines": [
+        "== ========================= ========= ", 
+        "id           name            inventory ", 
+        "== ========================= ========= ", 
+        " 6 tag_AnsibleGroup_bastions         3", 
+        "== ========================= ========= "
+    ]
+}
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418375.74-9556-64267807643132 && echo ansible-tmp-1589418375.74-9556-64267807643132="` echo /root/.ansible/tmp/ansible-tmp-1589418375.74-9556-64267807643132 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmptLtnMM TO /root/.ansible/tmp/ansible-tmp-1589418375.74-9556-64267807643132/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418375.74-9556-64267807643132/ /root/.ansible/tmp/ansible-tmp-1589418375.74-9556-64267807643132/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418375.74-9556-64267807643132/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418375.74-9556-64267807643132/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => (item=tag_AnsibleGroup_frontends) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "-n", 
+        "tag_AnsibleGroup_frontends", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.500194", 
+    "end": "2020-05-14 01:06:16.345511", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create -n \"tag_AnsibleGroup_frontends\" --inventory \"Three tier inventory\" \n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": "tag_AnsibleGroup_frontends", 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:15.845317", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ========================== ========= \nid            name            inventory \n== ========================== ========= \n 7 tag_AnsibleGroup_frontends         3\n== ========================== ========= ", 
+    "stdout_lines": [
+        "== ========================== ========= ", 
+        "id            name            inventory ", 
+        "== ========================== ========= ", 
+        " 7 tag_AnsibleGroup_frontends         3", 
+        "== ========================== ========= "
+    ]
+}
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418376.38-9556-9943732754603 && echo ansible-tmp-1589418376.38-9556-9943732754603="` echo /root/.ansible/tmp/ansible-tmp-1589418376.38-9556-9943732754603 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp0s2BBn TO /root/.ansible/tmp/ansible-tmp-1589418376.38-9556-9943732754603/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418376.38-9556-9943732754603/ /root/.ansible/tmp/ansible-tmp-1589418376.38-9556-9943732754603/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418376.38-9556-9943732754603/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418376.38-9556-9943732754603/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => (item=tag_AnsibleGroup_apps) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "-n", 
+        "tag_AnsibleGroup_apps", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.490664", 
+    "end": "2020-05-14 01:06:16.968866", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create -n \"tag_AnsibleGroup_apps\" --inventory \"Three tier inventory\" \n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": "tag_AnsibleGroup_apps", 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:16.478202", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ===================== ========= \nid         name          inventory \n== ===================== ========= \n 8 tag_AnsibleGroup_apps         3\n== ===================== ========= ", 
+    "stdout_lines": [
+        "== ===================== ========= ", 
+        "id         name          inventory ", 
+        "== ===================== ========= ", 
+        " 8 tag_AnsibleGroup_apps         3", 
+        "== ===================== ========= "
+    ]
+}
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418377.0-9556-134510568094866 && echo ansible-tmp-1589418377.0-9556-134510568094866="` echo /root/.ansible/tmp/ansible-tmp-1589418377.0-9556-134510568094866 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp8LKvIJ TO /root/.ansible/tmp/ansible-tmp-1589418377.0-9556-134510568094866/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418377.0-9556-134510568094866/ /root/.ansible/tmp/ansible-tmp-1589418377.0-9556-134510568094866/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418377.0-9556-134510568094866/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418377.0-9556-134510568094866/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => (item=tag_AnsibleGroup_appdbs) => {
+    "ansible_loop_var": "item", 
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "create", 
+        "-n", 
+        "tag_AnsibleGroup_appdbs", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.478896", 
+    "end": "2020-05-14 01:06:17.581316", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group create -n \"tag_AnsibleGroup_appdbs\" --inventory \"Three tier inventory\" \n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "item": "tag_AnsibleGroup_appdbs", 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:17.102420", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ======================= ========= \nid          name           inventory \n== ======================= ========= \n 9 tag_AnsibleGroup_appdbs         3\n== ======================= ========= ", 
+    "stdout_lines": [
+        "== ======================= ========= ", 
+        "id          name           inventory ", 
+        "== ======================= ========= ", 
+        " 9 tag_AnsibleGroup_appdbs         3", 
+        "== ======================= ========= "
+    ]
+}
+
+TASK [config-tower : Associate AWS tags as children to bastions group] ***********************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml:19
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418377.66-9726-20913009076459 && echo ansible-tmp-1589418377.66-9726-20913009076459="` echo /root/.ansible/tmp/ansible-tmp-1589418377.66-9726-20913009076459 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpMZaJHk TO /root/.ansible/tmp/ansible-tmp-1589418377.66-9726-20913009076459/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418377.66-9726-20913009076459/ /root/.ansible/tmp/ansible-tmp-1589418377.66-9726-20913009076459/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418377.66-9726-20913009076459/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418377.66-9726-20913009076459/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "associate", 
+        "--group", 
+        "tag_AnsibleGroup_bastions", 
+        "--parent", 
+        "bastions", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.786385", 
+    "end": "2020-05-14 01:06:18.550524", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group associate --group tag_AnsibleGroup_bastions --parent bastions --inventory \"Three tier inventory\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:17.764139", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "OK. (changed: false)", 
+    "stdout_lines": [
+        "OK. (changed: false)"
+    ]
+}
+
+TASK [config-tower : Associate AWS tags as children to frontends group] **********************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml:23
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418378.62-9749-261657131056610 && echo ansible-tmp-1589418378.62-9749-261657131056610="` echo /root/.ansible/tmp/ansible-tmp-1589418378.62-9749-261657131056610 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpCBCwRp TO /root/.ansible/tmp/ansible-tmp-1589418378.62-9749-261657131056610/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418378.62-9749-261657131056610/ /root/.ansible/tmp/ansible-tmp-1589418378.62-9749-261657131056610/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418378.62-9749-261657131056610/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418378.62-9749-261657131056610/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "associate", 
+        "--group", 
+        "tag_AnsibleGroup_frontends", 
+        "--parent", 
+        "frontends", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.855262", 
+    "end": "2020-05-14 01:06:19.582021", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group associate --group tag_AnsibleGroup_frontends --parent frontends --inventory \"Three tier inventory\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:18.726759", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "OK. (changed: false)", 
+    "stdout_lines": [
+        "OK. (changed: false)"
+    ]
+}
+
+TASK [config-tower : Associate AWS tags as children to apps group] ***************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml:27
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418379.66-9772-57520610916513 && echo ansible-tmp-1589418379.66-9772-57520610916513="` echo /root/.ansible/tmp/ansible-tmp-1589418379.66-9772-57520610916513 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmptSrQyT TO /root/.ansible/tmp/ansible-tmp-1589418379.66-9772-57520610916513/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418379.66-9772-57520610916513/ /root/.ansible/tmp/ansible-tmp-1589418379.66-9772-57520610916513/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418379.66-9772-57520610916513/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418379.66-9772-57520610916513/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "associate", 
+        "--group", 
+        "tag_AnsibleGroup_apps", 
+        "--parent", 
+        "apps", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.706145", 
+    "end": "2020-05-14 01:06:20.464909", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group associate --group tag_AnsibleGroup_apps --parent apps --inventory \"Three tier inventory\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:19.758764", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "OK. (changed: false)", 
+    "stdout_lines": [
+        "OK. (changed: false)"
+    ]
+}
+
+TASK [config-tower : Associate AWS tags as children to appdbs group] *************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml:31
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418380.54-9795-169824049240099 && echo ansible-tmp-1589418380.54-9795-169824049240099="` echo /root/.ansible/tmp/ansible-tmp-1589418380.54-9795-169824049240099 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp6PMH45 TO /root/.ansible/tmp/ansible-tmp-1589418380.54-9795-169824049240099/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418380.54-9795-169824049240099/ /root/.ansible/tmp/ansible-tmp-1589418380.54-9795-169824049240099/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418380.54-9795-169824049240099/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418380.54-9795-169824049240099/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "group", 
+        "associate", 
+        "--group", 
+        "tag_AnsibleGroup_appdbs", 
+        "--parent", 
+        "appdbs", 
+        "--inventory", 
+        "Three tier inventory"
+    ], 
+    "delta": "0:00:00.708468", 
+    "end": "2020-05-14 01:06:21.351607", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli group associate --group tag_AnsibleGroup_appdbs --parent appdbs --inventory \"Three tier inventory\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:20.643139", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "OK. (changed: false)", 
+    "stdout_lines": [
+        "OK. (changed: false)"
+    ]
+}
+
+TASK [config-tower : Add localhost as host] **************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml:35
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418381.43-9818-174870285538062 && echo ansible-tmp-1589418381.43-9818-174870285538062="` echo /root/.ansible/tmp/ansible-tmp-1589418381.43-9818-174870285538062 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmp7rafMU TO /root/.ansible/tmp/ansible-tmp-1589418381.43-9818-174870285538062/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418381.43-9818-174870285538062/ /root/.ansible/tmp/ansible-tmp-1589418381.43-9818-174870285538062/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418381.43-9818-174870285538062/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418381.43-9818-174870285538062/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "host", 
+        "create", 
+        "-n", 
+        "localhost", 
+        "--inventory", 
+        "Three tier inventory", 
+        "--variables", 
+        "@/root/inventory_vars.json"
+    ], 
+    "delta": "0:00:00.613948", 
+    "end": "2020-05-14 01:06:22.144343", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli host create -n localhost --inventory \"Three tier inventory\" --variables @/root/inventory_vars.json\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:21.530395", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== ========= ========= ======= \nid   name    inventory enabled \n== ========= ========= ======= \n 3 localhost         3    true\n== ========= ========= ======= ", 
+    "stdout_lines": [
+        "== ========= ========= ======= ", 
+        "id   name    inventory enabled ", 
+        "== ========= ========= ======= ", 
+        " 3 localhost         3    true", 
+        "== ========= ========= ======= "
+    ]
+}
+
+TASK [config-tower : Create inventory source with ec2 script] ********************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/ec2_dynamic.yml:39
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418382.22-9841-251539376715493 && echo ansible-tmp-1589418382.22-9841-251539376715493="` echo /root/.ansible/tmp/ansible-tmp-1589418382.22-9841-251539376715493 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpGYTgHn TO /root/.ansible/tmp/ansible-tmp-1589418382.22-9841-251539376715493/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418382.22-9841-251539376715493/ /root/.ansible/tmp/ansible-tmp-1589418382.22-9841-251539376715493/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418382.22-9841-251539376715493/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418382.22-9841-251539376715493/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "inventory_source", 
+        "create", 
+        "-n", 
+        "Three tier inventory source", 
+        "--inventory", 
+        "Three tier inventory", 
+        "--source", 
+        "ec2", 
+        "--credential", 
+        "AWS Access Key", 
+        "--source-regions", 
+        "us-west-1", 
+        "--instance-filters", 
+        "tag:instance_filter=three-tier-app-tanshah@redhat.com", 
+        "--overwrite", 
+        "yes", 
+        "--update-on-launch", 
+        "yes"
+    ], 
+    "delta": "0:00:00.724225", 
+    "end": "2020-05-14 01:06:23.050725", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli inventory_source create -n \"Three tier inventory source\" --inventory \"Three tier inventory\" --source ec2 --credential \"AWS Access Key\" --source-regions \"us-west-1\" --instance-filters \"tag:instance_filter=three-tier-app-tanshah@redhat.com\" --overwrite yes --update-on-launch yes\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2020-05-14 01:06:22.326500", 
+    "stderr": "", 
+    "stderr_lines": [], 
+    "stdout": "== =========================== ========= ====== \nid            name             inventory source \n== =========================== ========= ====== \n 7 Three tier inventory source         3 ec2\n== =========================== ========= ====== ", 
+    "stdout_lines": [
+        "== =========================== ========= ====== ", 
+        "id            name             inventory source ", 
+        "== =========================== ========= ====== ", 
+        " 7 Three tier inventory source         3 ec2", 
+        "== =========================== ========= ====== "
+    ]
+}
+
+TASK [config-tower : include_tasks] **********************************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/main.yml:6
+included: /root/ansible_advance_homework/roles/config-tower/tasks/job_template.yml for localhost
+
+TASK [config-tower : Job template for OSP Instances] *****************************************************************************************************************************************************************************************
+task path: /root/ansible_advance_homework/roles/config-tower/tasks/job_template.yml:1
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir /root/.ansible/tmp/ansible-tmp-1589418383.16-9866-10375714189451 && echo ansible-tmp-1589418383.16-9866-10375714189451="` echo /root/.ansible/tmp/ansible-tmp-1589418383.16-9866-10375714189451 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-9233MqVw0T/tmpI_z6wO TO /root/.ansible/tmp/ansible-tmp-1589418383.16-9866-10375714189451/AnsiballZ_command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1589418383.16-9866-10375714189451/ /root/.ansible/tmp/ansible-tmp-1589418383.16-9866-10375714189451/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python2 /root/.ansible/tmp/ansible-tmp-1589418383.16-9866-10375714189451/AnsiballZ_command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1589418383.16-9866-10375714189451/ > /dev/null 2>&1 && sleep 0'
+fatal: [localhost]: FAILED! => {
+    "changed": true, 
+    "cmd": [
+        "tower-cli", 
+        "job_template", 
+        "create", 
+        "--name", 
+        "Provision QA Env", 
+        "--job-type", 
+        "run", 
+        "--inventory", 
+        "scm_inventory", 
+        "--project", 
+        "Homework Assignment", 
+        "--playbook", 
+        "site-osp-instances.yml", 
+        "--credential", 
+        "Connect_to_workstation"
+    ], 
+    "delta": "0:00:00.825254", 
+    "end": "2020-05-14 01:06:24.093210", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tower-cli job_template create --name \"Provision QA Env\" --job-type run --inventory \"scm_inventory\" --project \"Homework Assignment\" --playbook \"site-osp-instances.yml\" --credential \"Connect_to_workstation\"\n", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "msg": "non-zero return code", 
+    "rc": 40, 
+    "start": "2020-05-14 01:06:23.267956", 
+    "stderr": "Error: The Tower server claims it was sent a bad request.\n\nPOST https://tower1.9484.example.opentlc.com/api/v2/job_templates/\nParams: None\nData: {\"job_type\": \"run\", \"playbook\": \"site-osp-instances.yml\", \"inventory\": 2, \"credential\": 3, \"name\": \"Provision QA Env\", \"project\": 6}\n\nResponse: {\"playbook\":[\"Playbook not found for project.\"]}", 
+    "stderr_lines": [
+        "Error: The Tower server claims it was sent a bad request.", 
+        "", 
+        "POST https://tower1.9484.example.opentlc.com/api/v2/job_templates/", 
+        "Params: None", 
+        "Data: {\"job_type\": \"run\", \"playbook\": \"site-osp-instances.yml\", \"inventory\": 2, \"credential\": 3, \"name\": \"Provision QA Env\", \"project\": 6}", 
+        "", 
+        "Response: {\"playbook\":[\"Playbook not found for project.\"]}"
+    ], 
+    "stdout": "", 
+    "stdout_lines": []
+}
+
+PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+localhost                  : ok=24   changed=16   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
