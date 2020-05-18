@@ -1,6 +1,6 @@
 ---
 # vars file for osp.servers
-osp_servers:
+osp_instance:
   frontend:
     name: frontend
     state: present
