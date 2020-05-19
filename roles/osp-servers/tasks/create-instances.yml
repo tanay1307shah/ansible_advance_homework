@@ -8,7 +8,7 @@
     security_groups: "{{ item.value.security_group }}"
     key_name: "{{ item.value.key_name }}"
     nics:
-    - net-name: "{{ item.value.network }}"
+    - net-name: int_network
     # FIXME - This is messy
     userdata: |
       #!/bin/bash
@@ -24,7 +24,7 @@
     state: present
     reuse: yes
     server: "{{ item.value.name }}"
-    network: "{{ item.value.floating_ip_network }}"
+    network: ext_network
     wait: true
     timeout: 180
   register: r_os_floating_ip
