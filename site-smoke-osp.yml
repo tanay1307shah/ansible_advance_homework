@@ -9,6 +9,14 @@
     tags:
       - osp.smoke
   - name: Curl website
+    uri:
+      url: "http://{{item.public_v4}}"
+      return_content: yes
+    register: response
+
+  - name: Print returned json dictionary
+    debug:
+      var: reponse
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
