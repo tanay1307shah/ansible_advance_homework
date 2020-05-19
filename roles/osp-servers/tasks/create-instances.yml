@@ -1,9 +1,9 @@
 - name: Create new server instances and attaches them a network and passes metadata to the instance
   os_server:
-    cloud: ospcloud
+    cloud: "ospcloud"
     name: "{{ item.value.name }}"
     image: "{{ item.value.image }}"
-    meta: "group={{ item.value.meta[0].group }},deployment_name={{ item.value.meta[0].deployment_name }}"
+    meta: "group={{ item.value.meta.group }},deployment_name={{ item.value.meta.deployment_name }}"
     flavor: "{{ item.value.flavor }}"
     security_groups: "{{ item.value.security_group }}"
     key_name: "{{ item.value.key_name }}"
@@ -18,13 +18,14 @@
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
   register: instance_data
 
-- name: print response on instnce creation
-  debug:
-    var: "{{ instance_data }}"
+- debug:
+    msg: "{{ item.openstack.interface_ip }}"
+  loop: "{{ instance_data.results }}"
+
 
 - name: Add floating IP to server
   os_floating_ip:
-    cloud: ospcloud
+    cloud: "ospcloud"
     state: present
     reuse: yes
     server: "{{ item.value.name }}"
@@ -32,10 +33,6 @@
     wait: true
     timeout: 180
   register: r_os_floating_ip
-
-- name: print floating ip
-  debug: 
-    var: "{{ r_os_floating_ip }}"
 
 - name: Wait for server to be available
   wait_for:
