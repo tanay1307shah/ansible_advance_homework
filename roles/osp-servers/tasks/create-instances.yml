@@ -18,10 +18,10 @@
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
     register: instance_data
     debug:
-      msg: "{{  instance_data }}"
+      msg: "{{ instance_data }}"
 
 
-- name: Add floating IP to  "{{ item.value.name }}"
+- name: Add floating IP to server
   os_floating_ip:
     cloud: ospcloud
     state: present
