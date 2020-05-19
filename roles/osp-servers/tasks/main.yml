@@ -1,38 +1,6 @@
 ---
-- name: Create new server instances and attaches them a network and passes metadata to the instance
-  os_server:
-    cloud: "{{ osp_cloud }}"
-    name: "{{ osp_instance.name }}"
-    image: "{{ osp_instance.image }}"
-    meta: "{{ osp_instance.meta }}"
-    flavor: "{{ osp_instance.flavor }}"
-    security_groups: "{{ osp_instance.security_groups }}"
-    key_name: "{{ osp_instance.key_name }}"
-    nics:
-    - net-name: "{{ osp_instance.network }}"
-    # FIXME - This is messy
-    userdata: |
-      #!/bin/bash
-      curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
-      cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-      curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
-      cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
-
-
-- name: Add floating IP to Servers
-  os_floating_ip:
-    cloud: "{{ osp_cloud }}"
-    state: present
-    reuse: yes
-    server: "{{ osp_instance.name }}"
-    network: "{{ osp_instance.floating_ip_network }}"
-    wait: true
-    timeout: 180
-  register: r_os_floating_ip   
-
-- name: Wait for server to be available
-  wait_for:
-    host: "{{ r_os_floating_ip.floating_ip.floating_ip_address }}"
-    port: 22
-    search_regex: OpenSSH
-    timeout: 600
+- name: Create server instances on OSP cloud
+  include_tasks:
+    file: create-instances.yml
+  loop: "{{ osp_servers|dict2items }}"
+  when: item.value != ""
