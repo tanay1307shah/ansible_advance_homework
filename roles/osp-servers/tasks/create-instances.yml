@@ -5,7 +5,7 @@
     image: "{{ item.value.image }}"
     meta: "{{ item.value.meta }}"
     flavor: "{{ item.value.flavor }}"
-    security_groups: "{{ item.value.security_groups }}"
+    security_groups: "{{ item.value.security_group }}"
     key_name: "{{ item.value.key_name }}"
     nics:
     - net-name: "{{ item.value.network }}"
