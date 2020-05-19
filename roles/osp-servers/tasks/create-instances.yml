@@ -17,9 +17,6 @@
       curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
     register: instance_data
-    debug:
-      msg: "{{ instance_data }}"
-
 
 - name: Add floating IP to server
   os_floating_ip:
@@ -31,8 +28,6 @@
     wait: true
     timeout: 180
   register: r_os_floating_ip
-  debug:
-    msg: "{{ r_os_floating_ip }}"
 
 - name: Wait for server to be available
   wait_for:
