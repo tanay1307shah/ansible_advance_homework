@@ -1,5 +1,5 @@
 [workstation]
 workstation-f8a0.rhpds.opentlc.com ansible_connection=ssh ansible_ssh_user=tanshah-redhat.com  ansible_ssh_private_key_file=/root/.ssh/mykey.pem
 [awsbastion]
-bastion.9484.example.opentlc.com ansible_connection=ssh ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/.ssh/openstack.pem
+bastion.e4ee.example.opentlc.com ansible_connection=ssh ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/.ssh/openstack.pem
 

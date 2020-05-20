@@ -28,27 +28,28 @@
     name: tomcat
     state: started
 
-- name: create ansible tomcat directory
-  file:
-    path: /usr/share/tomcat/webapps/ansible
-    state: directory
+#- name: create ansible tomcat directory
+#   file:
+#     path: /usr/share/tomcat/webapps/ansible
+#     state: directory
 
-- name: copy static index.html to tomcat webapps/ansible/index.html
-  template:
-    src: index.html."{{ inventory_hostname }}"
-    dest: /usr/share/tomcat/webapps/ansible/index.html
+# - name: copy static index.html to tomcat webapps/ansible/index.html
+#   template:
+#     src: index.html."{{ inventory_hostname }}"
+#     dest: /usr/share/tomcat/webapps/ansible/index.html
 
-- name: install apache
-  yum:
-    name: httpd
-    state: latest
+# - name: install apache
+#   yum:
+#     name: httpd
+#     state: latest
 
-- name: enable apache at boot
-  service:
-    name: httpd
-    enabled: yes
+# - name: enable apache at boot
+#   service:
+#     name: httpd
+#     enabled: yes
 
-- name: start apache
-  service:
-    name: httpd
-    state: started
+# - name: start apache
+#   service:
+#     name: httpd
+#     state: started
+

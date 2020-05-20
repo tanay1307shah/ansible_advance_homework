@@ -1,9 +1,4 @@
 ---
-- name: http
-  package:
-    name: httpd
-    state: latest
-  
 - name: install HAProxy
   yum:
     name: haproxy 
@@ -18,6 +13,7 @@
   template:
     src: ./haproxy.cfg.j2
     dest: /etc/haproxy/haproxy.cfg
+    mode: 0644
   
 - name: restart HAproxy
   service:
