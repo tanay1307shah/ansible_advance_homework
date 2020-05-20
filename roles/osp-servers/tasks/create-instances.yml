@@ -18,11 +18,6 @@
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
   register: instance_data
 
-- debug:
-    msg: "{{ item.openstack.interface_ip }}"
-  loop: "{{ instance_data.results }}"
-
-
 - name: Add floating IP to server
   os_floating_ip:
     cloud: "ospcloud"
