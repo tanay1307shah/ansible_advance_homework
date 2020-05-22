@@ -27,7 +27,7 @@
       copy:
         content: |
           export username={{ param_user }}
-          export password=tShah0713!
+          export password={{ param_password }}
           export uri=https://labs.opentlc.com
         dest: /root/credential.rc
         mode: 0755

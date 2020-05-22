@@ -1,4 +1,4 @@
-Role Name
+osp-setup
 =========
 
 A brief description of the role goes here.

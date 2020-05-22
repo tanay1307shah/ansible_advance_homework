@@ -28,14 +28,15 @@
     name: tomcat
     state: started
 
-#- name: create ansible tomcat directory
+# Not Needed, can work with out this as well #
+# - name: create ansible tomcat directory
 #   file:
 #     path: /usr/share/tomcat/webapps/ansible
 #     state: directory
 
 # - name: copy static index.html to tomcat webapps/ansible/index.html
 #   template:
-#     src: index.html."{{ inventory_hostname }}"
+#     src: index.html.{{ inventory_hostname }}
 #     dest: /usr/share/tomcat/webapps/ansible/index.html
 
 # - name: install apache

@@ -1,4 +1,4 @@
-Role Name
+Setup Workstation
 =========
 
 A brief description of the role goes here.
